@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FREEdome KPI Dashboard — Landing Page CTR, Lead Form Dönüşüm, Aktivasyon Oranı, CPL ve diğer temel metriklerin gerçek zamanlı takibi.">
+    <title>FREEdome — KPI Takip Planı</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                FREEdome
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Landing Page</a></li>
+                <li><a href="hooks.html">Kreatif Hooklar</a></li>
+                <li><a href="dashboard.html" class="active">KPI Dashboard</a></li>
+                <li><a href="automation.html">Otomasyon</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero" style="padding-bottom: var(--space-2xl);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">📊 Görev 3</span>
+            </div>
+            <h1 class="animate-on-scroll">
+                KPI <span class="gradient-text">Takip Planı</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll stagger-1">
+                Launch sistemi, yalnızca başlatmak için değil; ne olduğunu anlamak için de kurgulanmalıdır. Hangi
+                verilerin takip edileceğini, nasıl organize edileceğini ve sinyallerin ne anlama geldiğini tanımlar.
+            </p>
+        </div>
+    </section>
+
+    <!-- KPI Cards -->
+    <section class="section" id="kpi-cards">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">🎯 İlk 72 Saat</span>
+                <h2>Temel KPI Listesi</h2>
+                <p>Launch'ın ilk 72 saatinde aşağıdaki KPI'lar izlenir. Her metrik, bir karar sorusuna bağlıdır.</p>
+            </div>
+
+            <div class="grid-4">
+                <!-- KPI 1 -->
+                <div class="kpi-card animate-on-scroll stagger-1" data-kpi="landing-ctr">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Landing Page CTR</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value"><span class="kpi-animate-value">0</span>%</div>
+                    <div class="kpi-target">Hedef: > %4 · GA4 + Hotjar</div>
+                    <div class="kpi-bar">
+                        <div class="kpi-bar-fill" data-width="96%" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="kpi-card animate-on-scroll stagger-2" data-kpi="form-rate">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Form Dolum Oranı</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value"><span class="kpi-animate-value">0</span>%</div>
+                    <div class="kpi-target">Hedef: > %25 · GA4 Form Events</div>
+                    <div class="kpi-bar">
+                        <div class="kpi-bar-fill" data-width="85%" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="kpi-card animate-on-scroll stagger-3" data-kpi="lead-quality">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Lead Kalite Skoru</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value"><span class="kpi-animate-value">0</span><span
+                            style="font-size: 1rem; font-weight: 400;">/100</span></div>
+                    <div class="kpi-target">Hedef: > 65/100 · CRM (manuel)</div>
+                    <div class="kpi-bar">
+                        <div class="kpi-bar-fill" data-width="72%" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 4 -->
+                <div class="kpi-card animate-on-scroll stagger-4" data-kpi="activation">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Aktivasyon Oranı (D+1)</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value"><span class="kpi-animate-value">0</span>%</div>
+                    <div class="kpi-target">Hedef: > %40 · Ürün Analitiği</div>
+                    <div class="kpi-bar">
+                        <div class="kpi-bar-fill" data-width="86%" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 5 -->
+                <div class="kpi-card animate-on-scroll stagger-1" data-kpi="viral-coeff">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Viral / Referral</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value"><span class="kpi-animate-value">0</span></div>
+                    <div class="kpi-target">Hedef: > 0.15 · Her 10 lead'den 1.5 yeni</div>
+                    <div class="kpi-bar">
+                        <div class="kpi-bar-fill" data-width="90%" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 6 -->
+                <div class="kpi-card animate-on-scroll stagger-2" data-kpi="cpl">
+                    <div class="kpi-header">
+                        <span class="kpi-title">CPL (Maliyet/Lead)</span>
+                        <span class="tag tag-success">Hedefte</span>
+                    </div>
+                    <div class="kpi-value">$<span class="kpi-animate-value">0</span></div>
+                    <div class="kpi-target">Hedef: < 8 USD · Meta / Google Ads</div>
+                            <div class="kpi-bar">
+                                <div class="kpi-bar-fill" data-width="80%" style="width: 0%;"></div>
+                            </div>
+                    </div>
+
+                    <!-- KPI 7 -->
+                    <div class="kpi-card animate-on-scroll stagger-3" data-kpi="email-open">
+                        <div class="kpi-header">
+                            <span class="kpi-title">E-posta Açılma (D+1)</span>
+                            <span class="tag tag-success">Hedefte</span>
+                        </div>
+                        <div class="kpi-value"><span class="kpi-animate-value">0</span>%</div>
+                        <div class="kpi-target">Hedef: > %40 · E-posta Platformu</div>
+                        <div class="kpi-bar">
+                            <div class="kpi-bar-fill" data-width="88%" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Google Sheet Yapısı -->
+    <section class="section" id="sheet-structure" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">📋 Google Sheet</span>
+                <h2>Google Sheet Yapısı</h2>
+                <p>Tek bir çalışma kitabında 4 sekmeyle organize edilir. Her sekmenin sorumluluğu ve güncelleme sıklığı
+                    bellidir.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs animate-on-scroll">
+                <button class="tab-btn active" data-tab="tab-dashboard">📊 Dashboard</button>
+                <button class="tab-btn" data-tab="tab-leadlog">📋 Lead Log</button>
+                <button class="tab-btn" data-tab="tab-creative">🎨 Kreatif Performans</button>
+                <button class="tab-btn" data-tab="tab-notes">📝 Günlük Karar Notu</button>
+            </div>
+
+            <!-- Tab Content: Dashboard -->
+            <div class="tab-content active" id="tab-dashboard">
+                <div class="glass-card">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: var(--space-md);">
+                        <div>
+                            <h3>1 — Dashboard</h3>
+                            <p style="font-size: 0.85rem;">Güncelleme: Her gün (sabah 09:00)</p>
+                        </div>
+                        <span class="tag tag-info">Günlük Delta</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>KPI</th>
+                                    <th>Dün</th>
+                                    <th>Bugün</th>
+                                    <th>Delta</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Landing Page CTR</td>
+                                    <td>%3.8</td>
+                                    <td style="color: var(--text-primary);">%4.8</td>
+                                    <td style="color: var(--success);">+1.0 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Form Dolum Oranı</td>
+                                    <td>%24.1</td>
+                                    <td style="color: var(--text-primary);">%28.5</td>
+                                    <td style="color: var(--success);">+4.4 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Lead Kalite Skoru</td>
+                                    <td>68</td>
+                                    <td style="color: var(--text-primary);">72</td>
+                                    <td style="color: var(--success);">+4 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Aktivasyon Oranı</td>
+                                    <td>%38.5</td>
+                                    <td style="color: var(--text-primary);">%43.2</td>
+                                    <td style="color: var(--success);">+4.7 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Viral Katsayısı</td>
+                                    <td>0.12</td>
+                                    <td style="color: var(--text-primary);">0.18</td>
+                                    <td style="color: var(--success);">+0.06 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">CPL</td>
+                                    <td>$7.20</td>
+                                    <td style="color: var(--text-primary);">$6.40</td>
+                                    <td style="color: var(--success);">-0.80 ↓</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">E-posta Açılma</td>
+                                    <td>%41.0</td>
+                                    <td style="color: var(--text-primary);">%44.1</td>
+                                    <td style="color: var(--success);">+3.1 ↑</td>
+                                    <td><span class="tag tag-success">🟢 İyi</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Lead Log -->
+            <div class="tab-content" id="tab-leadlog">
+                <div class="glass-card">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: var(--space-md);">
+                        <div>
+                            <h3>2 — Lead Log</h3>
+                            <p style="font-size: 0.85rem;">Güncelleme: Gerçek zamanlı (form entegrasyonu)</p>
+                        </div>
+                        <span class="tag tag-success">Canlı</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tarih</th>
+                                    <th>E-posta</th>
+                                    <th>Şirket</th>
+                                    <th>Kaynak UTM</th>
+                                    <th>Bütçe</th>
+                                    <th>CRM Skoru</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01.03 14:22</td>
+                                    <td style="color: var(--text-primary);">ayse@teknomarka.com</td>
+                                    <td>TeknoMarka</td>
+                                    <td><code
+                                            style="font-size: 0.75rem; color: var(--accent-secondary);">meta / paid_social</code>
+                                    </td>
+                                    <td>25K-100K</td>
+                                    <td><span class="tag tag-success">82</span></td>
+                                </tr>
+                                <tr>
+                                    <td>01.03 13:45</td>
+                                    <td style="color: var(--text-primary);">mehmet@dijitalajans.co</td>
+                                    <td>DijitalAjans</td>
+                                    <td><code
+                                            style="font-size: 0.75rem; color: var(--accent-secondary);">linkedin / organic</code>
+                                    </td>
+                                    <td>5K-25K</td>
+                                    <td><span class="tag tag-warning">58</span></td>
+                                </tr>
+                                <tr>
+                                    <td>01.03 12:10</td>
+                                    <td style="color: var(--text-primary);">elif@growthlab.io</td>
+                                    <td>GrowthLab</td>
+                                    <td><code
+                                            style="font-size: 0.75rem; color: var(--accent-secondary);">tiktok / paid_social</code>
+                                    </td>
+                                    <td>100K+</td>
+                                    <td><span class="tag tag-success">91</span></td>
+                                </tr>
+                                <tr>
+                                    <td>01.03 11:33</td>
+                                    <td style="color: var(--text-primary);">can@startupx.com</td>
+                                    <td>StartupX</td>
+                                    <td><code
+                                            style="font-size: 0.75rem; color: var(--accent-secondary);">email / referral</code>
+                                    </td>
+                                    <td>0-5K</td>
+                                    <td><span class="tag tag-warning">45</span></td>
+                                </tr>
+                                <tr>
+                                    <td>01.03 10:15</td>
+                                    <td style="color: var(--text-primary);">zeynep@ecommerce.tr</td>
+                                    <td>E-Commerce TR</td>
+                                    <td><code
+                                            style="font-size: 0.75rem; color: var(--accent-secondary);">meta / paid_social</code>
+                                    </td>
+                                    <td>25K-100K</td>
+                                    <td><span class="tag tag-success">76</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Creative Performance -->
+            <div class="tab-content" id="tab-creative">
+                <div class="glass-card">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: var(--space-md);">
+                        <div>
+                            <h3>3 — Kreatif Performans</h3>
+                            <p style="font-size: 0.85rem;">Güncelleme: Her 12 saatte bir</p>
+                        </div>
+                        <span class="tag tag-warning">12 saat</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hook</th>
+                                    <th>CTR</th>
+                                    <th>CPL</th>
+                                    <th>Video Gör.</th>
+                                    <th>Skip Oranı</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Hook 1 — Kıyaslama (Pain)
+                                    </td>
+                                    <td style="color: var(--success);">%5.2</td>
+                                    <td>$5.80</td>
+                                    <td>12,450</td>
+                                    <td>%22</td>
+                                    <td><span class="tag tag-success">🏆 En İyi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Hook 2 — Kimlik (Identity)
+                                    </td>
+                                    <td>%3.8</td>
+                                    <td>$7.20</td>
+                                    <td>8,320</td>
+                                    <td>%31</td>
+                                    <td><span class="tag tag-warning">Optimize Et</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color: var(--text-primary); font-weight: 500;">Hook 3 — Provokasyon
+                                        (Interrupt)</td>
+                                    <td>%4.5</td>
+                                    <td>$6.10</td>
+                                    <td>10,180</td>
+                                    <td>%26</td>
+                                    <td><span class="tag tag-info">İyi</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Daily Decision Note -->
+            <div class="tab-content" id="tab-notes">
+                <div class="glass-card">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: var(--space-md);">
+                        <div>
+                            <h3>4 — Günlük Karar Notu</h3>
+                            <p style="font-size: 0.85rem;">Güncelleme: EOD (gün sonu)</p>
+                        </div>
+                        <span class="tag tag-info">EOD</span>
+                    </div>
+
+                    <!-- Day 1 Note -->
+                    <div
+                        style="border-left: 3px solid var(--accent-primary); padding-left: var(--space-xl); margin-bottom: var(--space-xl);">
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
+                            <span class="tag tag-info">Gün 1</span>
+                            <span style="font-size: 0.82rem; color: var(--text-muted);">01.03.2026</span>
+                        </div>
+
+                        <div style="margin-bottom: var(--space-lg);">
+                            <h4
+                                style="font-size: 0.88rem; color: var(--accent-secondary); margin-bottom: var(--space-sm);">
+                                ✅ Bugün Ne Yapıldı?</h4>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• 3 hook varyantı yayına
+                                    alındı (Meta + TikTok)</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• Landing page deploy
+                                    edildi, form entegrasyonu tamamlandı</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• UTM takibi aktif, tüm
+                                    kampanya linkleri etiketlendi</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: var(--space-lg);">
+                            <h4 style="font-size: 0.88rem; color: var(--warning); margin-bottom: var(--space-sm);">📡
+                                Hangi Sinyal Alındı?</h4>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• Hook 1 (Pain) en yüksek
+                                    CTR'ı aldı (%5.2)</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• LinkedIn organik trafik
+                                    beklenenden düşük</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• Form dolum oranı
+                                    beklentilerin üzerinde (%28.5)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 0.88rem; color: var(--success); margin-bottom: var(--space-sm);">🔄
+                                Yarın Ne Değiştirilecek?</h4>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• Hook 2'nin alt yazı
+                                    metnini güncellenecek</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• LinkedIn DM, kampanyası
+                                    denenecek (PhantomBuster)</li>
+                                <li style="font-size: 0.88rem; color: var(--text-secondary);">• Hook 1 bütçesi
+                                    artırılacak (ölçeklendirme sinyali)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scaling & Optimization Signals -->
+    <section class="section" id="signals">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">⚡ Karar Mekanizması</span>
+                <h2>Ölçeklendirme ve Optimizasyon Sinyalleri</h2>
+                <p>Her sinyal tek başına karar vermek için yeterli değildir. <strong>Çift sinyal kuralı</strong>
+                    uygulanır: iki göstergeden herhangi biri tetiklendiğinde diğer sekmenin verisi kontrol edilir,
+                    onaylanırsa aksiyon alınır.</p>
+            </div>
+
+            <div class="signal-table animate-on-scroll">
+                <!-- Scale Column -->
+                <div class="signal-column scale">
+                    <div class="signal-column-header">🟢 Ölçekle</div>
+                    <div class="signal-item">
+                        Landing CTR <strong>> %5</strong> ve form dolum <strong>> %30</strong>
+                    </div>
+                    <div class="signal-item">
+                        CPL <strong>
+                            < 6 USD</strong> ve aktivasyon oranı <strong>> %45</strong>
+                    </div>
+                    <div class="signal-item">
+                        Referral katsayısı <strong>> 0.2</strong> (viral etki başlıyor)
+                    </div>
+                    <div class="signal-item">
+                        3 farklı kaynak kanalının hepsi pozitif CPL'de
+                    </div>
+                    <div class="signal-item">
+                        Lead kalite skoru ortalaması <strong>> 70</strong>
+                    </div>
+                </div>
+
+                <!-- Optimize Column -->
+                <div class="signal-column optimize">
+                    <div class="signal-column-header">🟡 Optimize Et</div>
+                    <div class="signal-item">
+                        Landing CTR <strong>
+                            < %2</strong>: Hero kopyası veya CTA değiştir
+                    </div>
+                    <div class="signal-item">
+                        Form dolum <strong>
+                            < %15</strong>: Alan sayısını azalt, mikro kopya güvencelendir
+                    </div>
+                    <div class="signal-item">
+                        E-posta açılma <strong>
+                            < %25</strong>: Konu satırı A/B testi yap
+                    </div>
+                    <div class="signal-item">
+                        Aktivasyon <strong>
+                            < %30</strong>: Onboarding e-postasını yeniden yaz
+                    </div>
+                    <div class="signal-item">
+                        CPL <strong>> 15 USD</strong>: Hedeflemeyi daralt veya kreatifi değiştir
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="footer-brand">FREEdome</span> — 3 Günlük Launch Sistemi · Gravity | Junior AI Growth
+                Systems Operator | Teknik Değerlendirme
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

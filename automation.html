@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FREEdome UTM Yapılandırması ve Otomasyon Akış Diyagramı — Form gönderiminden aktivasyona kadar olan tetikleyici zinciri.">
+    <title>FREEdome — UTM & Otomasyon Akışı</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                FREEdome
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Landing Page</a></li>
+                <li><a href="hooks.html">Kreatif Hooklar</a></li>
+                <li><a href="dashboard.html">KPI Dashboard</a></li>
+                <li><a href="automation.html" class="active">Otomasyon</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero" style="padding-bottom: var(--space-2xl);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">⭐ Bonus</span>
+            </div>
+            <h1 class="animate-on-scroll">
+                UTM Yapısı & <span class="gradient-text">Otomasyon Akışı</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll stagger-1">
+                Tüm linklerde tutarlı UTM şeması uygulanır. Tutarlılık olmadan kaynak analizi güvenilmez hale gelir.
+                Otomasyon akışı, form gönderiminden aktivasyona kadar olan tetikleyici zincirini tanımlar.
+            </p>
+        </div>
+    </section>
+
+    <!-- UTM Structure -->
+    <section class="section" id="utm-structure">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">🔗 UTM Parametreleri</span>
+                <h2>UTM Yapılandırma Önerisi</h2>
+                <p>Tüm linklerde aşağıdaki UTM şeması uygulanır.</p>
+            </div>
+
+            <div class="table-wrapper animate-on-scroll" style="margin-bottom: var(--space-3xl);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>UTM Parametresi</th>
+                            <th>Örnek Değer</th>
+                            <th>Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td
+                                style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem;">
+                                utm_source</td>
+                            <td><code style="color: var(--text-primary);">meta / tiktok / linkedin / email</code></td>
+                            <td>Trafik kaynağı</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem;">
+                                utm_medium</td>
+                            <td><code style="color: var(--text-primary);">paid_social / organic / referral</code></td>
+                            <td>Kanal tipi</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem;">
+                                utm_campaign</td>
+                            <td><code style="color: var(--text-primary);">freedome_launch_d1</code></td>
+                            <td>Kampanya adı (gün sonu sayacıyla)</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem;">
+                                utm_content</td>
+                            <td><code style="color: var(--text-primary);">hook1_pain / hook2_identity</code></td>
+                            <td>Hangi kreatif varyantıyla gelindi</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem;">
+                                utm_term</td>
+                            <td><code style="color: var(--text-primary);">smb_owner / growth_marketer</code></td>
+                            <td>Hedef segmenti (yalnızca paid'de)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Interactive UTM Builder -->
+            <div class="utm-builder animate-on-scroll">
+                <h3 style="margin-bottom: var(--space-lg);">🛠️ Canlı UTM Builder</h3>
+                <p style="margin-bottom: var(--space-xl); font-size: 0.9rem;">Parametreleri seçin veya yazın, tam URL
+                    otomatik oluşturulur.</p>
+
+                <div class="grid-2" style="gap: var(--space-lg);">
+                    <div class="form-group">
+                        <label class="form-label">utm_source</label>
+                        <select class="form-select utm-param" data-param="utm_source">
+                            <option value="meta">meta</option>
+                            <option value="tiktok">tiktok</option>
+                            <option value="linkedin">linkedin</option>
+                            <option value="email">email</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">utm_medium</label>
+                        <select class="form-select utm-param" data-param="utm_medium">
+                            <option value="paid_social">paid_social</option>
+                            <option value="organic">organic</option>
+                            <option value="referral">referral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">utm_campaign</label>
+                        <input type="text" class="form-input utm-param" data-param="utm_campaign"
+                            value="freedome_launch_d1" placeholder="freedome_launch_d1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">utm_content</label>
+                        <select class="form-select utm-param" data-param="utm_content">
+                            <option value="hook1_pain">hook1_pain</option>
+                            <option value="hook2_identity">hook2_identity</option>
+                            <option value="hook3_provocation">hook3_provocation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">utm_term <span style="color: var(--text-muted);">(yalnızca
+                                paid)</span></label>
+                        <select class="form-select utm-param" data-param="utm_term">
+                            <option value="">Seçiniz</option>
+                            <option value="smb_owner">smb_owner</option>
+                            <option value="growth_marketer">growth_marketer</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- UTM Preview -->
+                <div class="utm-preview">
+                    <button class="utm-copy-btn" id="utm-copy-btn">📋 Kopyala</button>
+                    <span
+                        id="utm-output">https://freedome.ai/launch?utm_source=meta&utm_medium=paid_social&utm_campaign=freedome_launch_d1&utm_content=hook1_pain</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Flow -->
+    <section class="section" id="automation-flow" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">🔄 Otomasyon</span>
+                <h2>Otomasyon Akış Diyagramı</h2>
+                <p>Form gönderiminden aktivasyona kadar olan tetikleyici zinciri. Gerçek entegrasyon gerekmez; sistem
+                    mimarisi yeterlidir.</p>
+            </div>
+
+            <div class="flow-chart animate-on-scroll" style="max-width: 720px; margin: 0 auto;">
+                <!-- Step 1 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">1</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>Form Gönderildi</h4>
+                        <p>Lead CRM'e düşer, skor atanır</p>
+                        <span class="flow-tool">Tally / Typeform → Zapier → HubSpot</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">2</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>Skor > 60</h4>
+                        <p>Onay e-postası + trial aktivasyon linki gönder</p>
+                        <span class="flow-tool">HubSpot Workflow veya Make</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">3</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>Skor ≤ 60</h4>
+                        <p>Nurture sekansına al (3 e-posta / 7 gün)</p>
+                        <span class="flow-tool">HubSpot / Brevo Sequence</span>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">4</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>E-posta Açılmadı (D+1)</h4>
+                        <p>SMS veya LinkedIn DM tetikle</p>
+                        <span class="flow-tool">Twilio veya PhantomBuster</span>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">5</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>Trial Aktivasyon Yapıldı</h4>
+                        <p>Satış ekibine bildirim + onboarding maili</p>
+                        <span class="flow-tool">Slack alert + HubSpot Task</span>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="flow-step">
+                    <div class="flow-step-line">
+                        <div class="flow-step-dot">6</div>
+                    </div>
+                    <div class="flow-step-content">
+                        <h4>Referral Linki Paylaşıldı</h4>
+                        <p>Paylaşan kişiye ekstra kredi / ödül</p>
+                        <span class="flow-tool">Viral Loops veya ReferralHero</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="footer-brand">FREEdome</span> — 3 Günlük Launch Sistemi · Gravity | Junior AI Growth
+                Systems Operator | Teknik Değerlendirme
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
