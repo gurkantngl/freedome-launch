@@ -8,6 +8,7 @@
         content="FREEdome KPI Dashboard — Landing Page CTR, Lead Form Dönüşüm, Aktivasyon Oranı, CPL ve diğer temel metriklerin gerçek zamanlı takibi.">
     <title>FREEdome — KPI Takip Planı</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -152,6 +153,54 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <!-- KPI Charts Section -->
+    <section class="section" id="kpi-charts" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">📈 Veri Görselleştirme</span>
+                <h2>72 Saatlik Performans Grafikleri</h2>
+                <p>Launch'ın ilk 72 saatinde KPI'ların saatlik trendi, hook bazlı performans ve lead kaynak dağılımı.
+                </p>
+            </div>
+
+            <!-- Full width: Trend Line Chart -->
+            <div class="chart-container animate-on-scroll" style="margin-bottom: var(--space-2xl);">
+                <div class="chart-header">
+                    <h3>KPI Trend Grafiği</h3>
+                    <span class="tag tag-info">Son 72 Saat</span>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Two charts side by side -->
+            <div class="grid-2" style="gap: var(--space-2xl);">
+                <!-- Hook Performance Bar Chart -->
+                <div class="chart-container animate-on-scroll stagger-1">
+                    <div class="chart-header">
+                        <h3>Hook Performansı</h3>
+                        <span class="tag tag-warning">CTR & CPL</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="hookChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Lead Source Doughnut Chart -->
+                <div class="chart-container animate-on-scroll stagger-2">
+                    <div class="chart-header">
+                        <h3>Lead Kaynak Dağılımı</h3>
+                        <span class="tag tag-success">Toplam: 47 Lead</span>
+                    </div>
+                    <div class="chart-wrapper chart-wrapper-doughnut">
+                        <canvas id="sourceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Google Sheet Yapısı -->

@@ -13,6 +13,13 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Chart.js">
+</p>
+
+<p align="center">
+  <a href="https://gurkantngl.github.io/freedome-launch/">
+    <img src="https://img.shields.io/badge/Canlı_Demo-GitHub_Pages-6c5ce7?style=for-the-badge&logo=github&logoColor=white" alt="Live Demo">
+  </a>
 </p>
 
 ---
@@ -25,8 +32,40 @@ FREEdome, yapay zeka ile reklam kreatifi üreten bir SaaS ürünü için tasarla
 |-------|----------|
 | **Landing Page** | Dönüşüm odaklı ana sayfa — hero, fayda blokları, lead form |
 | **Kreatif Hooklar** | 3 video hook metni, başlık varyasyonları, sosyal medya copy |
-| **KPI Dashboard** | 7 temel KPI kartı, Google Sheet simülasyonu, karar sinyalleri |
+| **KPI Dashboard** | 7 KPI kartı, Chart.js grafikleri, Google Sheet simülasyonu, karar sinyalleri |
 | **UTM & Otomasyon** | UTM yapılandırması, canlı URL builder, 6 adımlı otomasyon akışı |
+
+---
+
+## Düşünce Süreci
+
+Bu proje, PDF'deki 4 görevi bağımsız çıktılar olarak değil, **birbirine bağlı tek bir sistem** olarak ele alır:
+
+```
+Landing Page (Görev 1)
+    ↓ form gönderimi → lead verisi üretir
+KPI Dashboard (Görev 3)
+    ↓ performans verisini okur
+Kreatif Hooklar (Görev 2)
+    ↓ hook CTR verisine göre optimize edilir
+UTM & Otomasyon (Bonus)
+    ↓ tüm akışı birbirine bağlar
+```
+
+**Neden bu önemli?** Gerçek bir launch'ta bu 4 parça birbirinden bağımsız çalışmaz. Landing page'deki form dolum oranı düşükse, dashboard bunu sinyal olarak gösterir, hook metni değiştirilir, UTM ile yeni kreatif test edilir. Bu döngüsel yapıyı yansıtmak için tüm görevler **tek bir web uygulaması** altında, ortak tasarım sistemi ve navigasyonla birleştirildi.
+
+---
+
+## Karar Mantığı
+
+| Karar | Neden? |
+|-------|--------|
+| **Vanilla HTML/CSS/JS** | Framework overhead'i yok, `git clone` sonrası anında çalışır. Değerlendiren kişi `npm install` beklemek zorunda kalmaz. |
+| **Tek CSS Design System** | 4 sayfanın görsel tutarlılığını garanti eder. Renk, font, spacing değişiklikleri tek dosyadan yönetilir. |
+| **Modüler JS dosyaları** | Her sayfa kendi mantığını taşır (`main.js`, `dashboard.js`), ortak kod (`nav.js`) ayrı tutulur. |
+| **Chart.js (CDN)** | KPI verilerini sadece tablo değil, **trend olarak da** gösterir. Karar verme sürecini görselleştirir. |
+| **IntersectionObserver** | Animasyonlar sadece kullanıcı o bölüme geldiğinde tetiklenir — performans ve deneyim dengesi. |
+| **Simüle edilmiş veri** | Gerçek API yerine statik veri kullanıldı, çünkü amaç veri kaynağı değil **sistemi göstermek**. |
 
 ---
 
@@ -37,10 +76,10 @@ FREEdome, yapay zeka ile reklam kreatifi üreten bir SaaS ürünü için tasarla
 - **Tam Responsive** — Mobil, tablet ve desktop uyumlu
 - **Sıfır Bağımlılık** — Vanilla HTML/CSS/JS, framework yok
 - **Animasyonlu Sayaçlar** — "4 gün → 40 saniye" karşılaştırması, IntersectionObserver ile tetiklenir
+- **Chart.js Grafikleri** — 72 saatlik KPI trend, hook performans karşılaştırması, lead kaynak dağılımı
 - **İnteraktif KPI Dashboard** — Progress bar'lar, renk kodlu durum göstergeleri, 4 tab'lı Google Sheet simülasyonu
 - **Canlı UTM Builder** — Gerçek zamanlı URL oluşturucu, tek tıkla kopyalama
 - **Lead Form** — Validasyonlu form, başarı ekranı, referral mekanizması
-- **Sayfa İçi Navigasyon** — Fixed navbar, aktif sayfa göstergesi, mobil hamburger menü
 
 ---
 
@@ -50,13 +89,13 @@ FREEdome, yapay zeka ile reklam kreatifi üreten bir SaaS ürünü için tasarla
 freedome-launch/
 ├── index.html          # Landing Page (Görev 1)
 ├── hooks.html          # Kreatif Hook Çalışması (Görev 2)
-├── dashboard.html      # KPI Dashboard (Görev 3)
+├── dashboard.html      # KPI Dashboard + Chart.js (Görev 3)
 ├── automation.html     # UTM & Otomasyon Akışı (Bonus)
 ├── css/
-│   └── style.css       # Tasarım sistemi (1250+ satır)
+│   └── style.css       # Tasarım sistemi (1300+ satır)
 ├── js/
 │   ├── main.js         # Landing page — sayaç, form, parallax
-│   ├── dashboard.js    # KPI bar animasyonları, tab geçişleri
+│   ├── dashboard.js    # KPI animasyonları, tab geçişleri, Chart.js grafikleri
 │   └── nav.js          # Navigasyon, scroll efektleri, mobil menü
 └── README.md
 ```
@@ -65,27 +104,17 @@ freedome-launch/
 
 ## Hızlı Başlangıç
 
-Herhangi bir kurulum veya derleme adımı gerekmez. Projeyi klonlayıp tarayıcıda açmanız yeterlidir:
+Herhangi bir kurulum veya derleme adımı gerekmez:
 
 ```bash
-# Repoyu klonlayın
 git clone https://github.com/gurkantngl/freedome-launch.git
-
-# Dizine girin
 cd freedome-launch
-
-# Tarayıcıda açın
-# Windows:
-start index.html
-
-# macOS:
-open index.html
-
-# Linux:
-xdg-open index.html
+start index.html    # Windows
+# open index.html   # macOS
+# xdg-open index.html  # Linux
 ```
 
-Veya doğrudan `index.html` dosyasına çift tıklayarak açabilirsiniz.
+Veya [Canlı Demo](https://gurkantngl.github.io/freedome-launch/) üzerinden doğrudan görüntüleyebilirsiniz.
 
 ---
 
@@ -108,6 +137,7 @@ Veya doğrudan `index.html` dosyasına çift tıklayarak açabilirsiniz.
 ### 3. KPI Dashboard (`dashboard.html`)
 
 - **7 KPI Kartı** — CTR, Form Dolum, Lead Kalite, Aktivasyon, Viral Katsayısı, CPL, E-posta Açılma
+- **Chart.js Grafikleri** — 72 saatlik trend (line), hook CTR/CPL karşılaştırma (bar), kaynak dağılımı (doughnut)
 - **Google Sheet Simülasyonu** — Dashboard, Lead Log, Kreatif Performans, Günlük Karar Notu (4 tab)
 - **Ölçeklendirme & Optimizasyon Sinyalleri** — Çift sinyal kuralı ile renk kodlu karar matrisi
 
@@ -132,25 +162,15 @@ Veya doğrudan `index.html` dosyasına çift tıklayarak açabilirsiniz.
 
 ---
 
-## Tasarım Felsefesi
-
-| İlke | Uygulama |
-|------|----------|
-| **Sistem Kurma** | Tüm görevler tek bir web uygulaması altında, ortak design system ile bağlı |
-| **Yapısal Düşünme** | Her sayfa belirli bir amaca hizmet eder, veri akışı açık ve izlenebilir |
-| **Hız ve Pratiklik** | Vanilla HTML/CSS/JS, sıfır dependency, anında çalışır |
-| **KPI Odaklı Bakış** | Dashboard interaktif, sinyaller renk kodlu, karar mekanizması görsel |
-
----
-
 ## Teknolojiler
 
 - **HTML5** — Semantik yapı, erişilebilirlik, SEO uyumlu meta etiketler
 - **CSS3** — Custom Properties, Grid, Flexbox, backdrop-filter, clamp(), animasyonlar
 - **JavaScript (ES6+)** — IntersectionObserver, DOM API, event delegation
+- **Chart.js 4** — KPI trend, hook performans ve kaynak dağılımı grafikleri
 - **Google Fonts** — Inter, JetBrains Mono
 
-> Hiçbir framework, build aracı veya harici bağımlılık kullanılmamıştır.
+> Hiçbir framework veya build aracı kullanılmamıştır. Chart.js CDN üzerinden yüklenir.
 
 ---
 
@@ -163,3 +183,4 @@ Bu proje [MIT](LICENSE) lisansı ile lisanslanmıştır.
 <p align="center">
   <strong>FREEdome</strong> — Rakibini Analiz Et. Kreatifini Saniyeler İçinde Üret.
 </p>
+

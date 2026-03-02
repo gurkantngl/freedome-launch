@@ -104,23 +104,42 @@ body::before {
   position: fixed;
   inset: 0;
   background: radial-gradient(ellipse at 20% 50%, rgba(108, 92, 231, 0.08) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 20%, rgba(116, 185, 255, 0.06) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 80%, rgba(162, 155, 254, 0.05) 0%, transparent 50%);
+    radial-gradient(ellipse at 80% 20%, rgba(116, 185, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(162, 155, 254, 0.05) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
 /* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   line-height: 1.2;
   font-weight: 700;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); letter-spacing: -0.01em; }
-h4 { font-size: 1.25rem; }
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
 
 p {
   color: var(--text-secondary);
@@ -133,7 +152,9 @@ a {
   transition: color var(--transition-fast);
 }
 
-a:hover { color: var(--accent-primary); }
+a:hover {
+  color: var(--accent-primary);
+}
 
 /* --- Layout --- */
 .container {
@@ -679,8 +700,15 @@ tr:hover td {
 }
 
 @keyframes tabFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Hero Section --- */
@@ -1020,6 +1048,7 @@ tr:hover td {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1027,8 +1056,13 @@ tr:hover td {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
@@ -1036,6 +1070,7 @@ tr:hover td {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1047,6 +1082,7 @@ tr:hover td {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1054,18 +1090,37 @@ tr:hover td {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .animate-on-scroll {
@@ -1079,10 +1134,21 @@ tr:hover td {
   transform: translateY(0);
 }
 
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
+.stagger-1 {
+  transition-delay: 0.1s;
+}
+
+.stagger-2 {
+  transition-delay: 0.2s;
+}
+
+.stagger-3 {
+  transition-delay: 0.3s;
+}
+
+.stagger-4 {
+  transition-delay: 0.4s;
+}
 
 /* --- Success State (Form) --- */
 .form-success {
@@ -1184,15 +1250,28 @@ tr:hover td {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .signal-table { grid-template-columns: 1fr; }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .signal-table {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 var(--space-md); }
-  .section { padding: var(--space-3xl) 0; }
+  .container {
+    padding: 0 var(--space-md);
+  }
 
-  .nav-links { display: none; }
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -1204,36 +1283,110 @@ tr:hover td {
     border-bottom: 1px solid var(--border-subtle);
     padding: var(--space-md);
   }
-  .nav-mobile-toggle { display: flex; }
 
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .nav-mobile-toggle {
+    display: flex;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
 
   .split-compare {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
+
   .split-divider {
     margin: 0 auto;
   }
 
-  .hero { padding-top: calc(70px + var(--space-3xl)); }
-  .hero .hero-cta { flex-direction: column; }
+  .hero {
+    padding-top: calc(70px + var(--space-3xl));
+  }
 
-  .tabs { flex-wrap: nowrap; }
+  .hero .hero-cta {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-wrap: nowrap;
+  }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.7rem; }
-  h2 { font-size: 1.4rem; }
+  h1 {
+    font-size: 1.7rem;
+  }
 
-  .card { padding: var(--space-lg); }
-  .kpi-card { padding: var(--space-lg); }
-  .hook-card-body { padding: var(--space-lg); }
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .kpi-card {
+    padding: var(--space-lg);
+  }
+
+  .hook-card-body {
+    padding: var(--space-lg);
+  }
 }
 
 /* --- Page-level padding for nav --- */
 .page-content {
   padding-top: 80px;
+}
+
+/* --- Charts --- */
+.chart-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+}
+
+.chart-container:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.chart-header h3 {
+  font-size: 1.05rem;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.chart-wrapper-doughnut {
+  max-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-wrapper-doughnut canvas {
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper-doughnut {
+    max-height: 260px;
+  }
 }
 
 /* --- Scrollbar --- */

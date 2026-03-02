@@ -140,4 +140,252 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ============================================
+    // Chart.js — KPI Grafikleri
+    // ============================================
+
+    const chartColors = {
+        purple: '#6c5ce7',
+        lavender: '#a29bfe',
+        blue: '#74b9ff',
+        teal: '#00cec9',
+        yellow: '#fdcb6e',
+        red: '#ff6b6b',
+        grid: 'rgba(255, 255, 255, 0.06)',
+        text: '#a0a0b8'
+    };
+
+    // Shared defaults for dark theme
+    Chart.defaults.color = chartColors.text;
+    Chart.defaults.borderColor = chartColors.grid;
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    // --- Simulated 72h data (every 6 hours = 12 data points) ---
+    const hours = ['0h', '6h', '12h', '18h', '24h', '30h', '36h', '42h', '48h', '54h', '60h', '66h', '72h'];
+    const trendData = {
+        ctr: [2.1, 2.8, 3.2, 3.5, 3.8, 4.0, 3.9, 4.2, 4.5, 4.6, 4.7, 4.8, 4.8],
+        formRate: [15, 18, 20, 22, 24, 24.1, 25, 26, 27, 27.5, 28, 28.2, 28.5],
+        activation: [20, 25, 28, 30, 33, 35, 37, 38.5, 40, 41, 42, 42.8, 43.2]
+    };
+
+    function createTrendChart() {
+        const ctx = document.getElementById('trendChart');
+        if (!ctx) return;
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: hours,
+                datasets: [
+                    {
+                        label: 'Landing CTR (%)',
+                        data: trendData.ctr,
+                        borderColor: chartColors.purple,
+                        backgroundColor: 'rgba(108, 92, 231, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 3,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: chartColors.purple,
+                        borderWidth: 2.5
+                    },
+                    {
+                        label: 'Form Dolum (%)',
+                        data: trendData.formRate,
+                        borderColor: chartColors.teal,
+                        backgroundColor: 'rgba(0, 206, 201, 0.08)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 3,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: chartColors.teal,
+                        borderWidth: 2.5
+                    },
+                    {
+                        label: 'Aktivasyon (%)',
+                        data: trendData.activation,
+                        borderColor: chartColors.blue,
+                        backgroundColor: 'rgba(116, 185, 255, 0.08)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 3,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: chartColors.blue,
+                        borderWidth: 2.5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { usePointStyle: true, padding: 20, font: { size: 12 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(10, 10, 15, 0.9)',
+                        titleColor: '#f0f0f5',
+                        bodyColor: '#a0a0b8',
+                        borderColor: 'rgba(108, 92, 231, 0.3)',
+                        borderWidth: 1,
+                        cornerRadius: 8,
+                        padding: 12
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: chartColors.grid },
+                        ticks: { font: { size: 11 } }
+                    },
+                    y: {
+                        grid: { color: chartColors.grid },
+                        ticks: { font: { size: 11 } },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // --- Hook Performance Bar Chart ---
+    function createHookChart() {
+        const ctx = document.getElementById('hookChart');
+        if (!ctx) return;
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Hook 1\nKıyaslama', 'Hook 2\nKimlik', 'Hook 3\nProvokasyon'],
+                datasets: [
+                    {
+                        label: 'CTR (%)',
+                        data: [5.2, 3.8, 4.5],
+                        backgroundColor: [
+                            'rgba(108, 92, 231, 0.8)',
+                            'rgba(162, 155, 254, 0.8)',
+                            'rgba(116, 185, 255, 0.8)'
+                        ],
+                        borderColor: [chartColors.purple, chartColors.lavender, chartColors.blue],
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        barPercentage: 0.6
+                    },
+                    {
+                        label: 'CPL ($)',
+                        data: [5.80, 7.20, 6.10],
+                        backgroundColor: [
+                            'rgba(0, 206, 201, 0.8)',
+                            'rgba(253, 203, 110, 0.8)',
+                            'rgba(0, 206, 201, 0.6)'
+                        ],
+                        borderColor: [chartColors.teal, chartColors.yellow, chartColors.teal],
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        barPercentage: 0.6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { usePointStyle: true, padding: 16, font: { size: 12 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(10, 10, 15, 0.9)',
+                        titleColor: '#f0f0f5',
+                        bodyColor: '#a0a0b8',
+                        borderColor: 'rgba(108, 92, 231, 0.3)',
+                        borderWidth: 1,
+                        cornerRadius: 8,
+                        padding: 12
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+                    y: {
+                        grid: { color: chartColors.grid },
+                        ticks: { font: { size: 11 } },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // --- Lead Source Doughnut Chart ---
+    function createSourceChart() {
+        const ctx = document.getElementById('sourceChart');
+        if (!ctx) return;
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Meta Ads', 'TikTok Ads', 'LinkedIn', 'E-posta', 'Referral'],
+                datasets: [{
+                    data: [18, 12, 8, 5, 4],
+                    backgroundColor: [
+                        chartColors.purple,
+                        chartColors.teal,
+                        chartColors.blue,
+                        chartColors.yellow,
+                        chartColors.lavender
+                    ],
+                    borderColor: 'rgba(10, 10, 15, 0.8)',
+                    borderWidth: 3,
+                    hoverBorderColor: '#f0f0f5',
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { usePointStyle: true, padding: 16, font: { size: 12 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(10, 10, 15, 0.9)',
+                        titleColor: '#f0f0f5',
+                        bodyColor: '#a0a0b8',
+                        borderColor: 'rgba(108, 92, 231, 0.3)',
+                        borderWidth: 1,
+                        cornerRadius: 8,
+                        padding: 12,
+                        callbacks: {
+                            label: function (context) {
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const pct = ((context.parsed / total) * 100).toFixed(1);
+                                return ` ${context.label}: ${context.parsed} lead (${pct}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // --- Initialize charts when section is visible ---
+    const chartSection = document.getElementById('kpi-charts');
+    if (chartSection) {
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    createTrendChart();
+                    createHookChart();
+                    createSourceChart();
+                    chartObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        chartObserver.observe(chartSection);
+    }
 });
